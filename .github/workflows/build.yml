@@ -1,0 +1,36 @@
+name: Build DonutTools (Auto-Sort)
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Repository klonen
+      uses: actions/checkout@v4
+
+    - name: Maven-Ordnerstruktur automatisch erstellen und Dateien sortieren
+      run: |
+        mkdir -p src/main/java/de/donuttools
+        mkdir -p src/main/resources
+        mv *.java src/main/java/de/donuttools/ 2>/dev/null || true
+        mv plugin.yml config.yml src/main/resources/ 2>/dev/null || true
+
+    - name: Java 17 einrichten
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Plugin mit Maven bauen
+      run: mvn clean package
+
+    - name: Fertige JAR-Datei hochladen
+      uses: actions/upload-artifact@v4
+      with:
+        name: DonutTools-Plugin
+        path: target/*.jar
