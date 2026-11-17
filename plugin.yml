@@ -1,0 +1,37 @@
+name: DonutTools
+version: 1.0.0
+main: de.donuttools.DonutTools
+api-version: '1.21'
+author: DonutTools
+description: Drill, Baumaxt, Zeit-Spitzhacke, Void-Eimer, Sell-Axe und Orders
+softdepend: [Vault]
+
+commands:
+  donuttools:
+    description: Admin-Befehl für DonutTools
+    usage: /donuttools <give|reload>
+    aliases: [dt]
+    permission: donuttools.admin
+  sell:
+    description: Items verkaufen
+    usage: /sell [hand]
+    permission: donuttools.sell
+  order:
+    description: Kauf-Orders erstellen und verwalten
+    usage: /order <create|list|mine|cancel|collect>
+    aliases: [orders]
+    permission: donuttools.order
+
+permissions:
+  donuttools.admin:
+    description: Items geben und Config neu laden
+    default: op
+  donuttools.sell:
+    description: /sell benutzen
+    default: true
+  donuttools.order:
+    description: /order benutzen
+    default: true
+  donuttools.sellaxe:
+    description: Sell-Axe benutzen
+    default: true

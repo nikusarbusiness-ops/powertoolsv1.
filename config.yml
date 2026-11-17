@@ -1,0 +1,66 @@
+# DonutTools Konfiguration
+
+drill:
+  # Drill baut nur Blöcke ab, für die eine Spitzhacke das richtige Werkzeug ist
+  only-preferred-tool: true
+  durability-per-block: 1
+
+tree-axe:
+  max-logs: 300
+  # Nur "echte" Bäume fällen (mit natürlichen Blättern), keine gebauten Holzhäuser
+  require-leaves: true
+  break-leaves: false
+  durability-per-log: 1
+
+timed-pickaxe:
+  days: 5
+
+sell-axe:
+  cooldown-ms: 500
+
+orders:
+  max-price-each: 1000000.0
+  max-amount: 100000
+
+# Verkaufspreise pro Item (/sell und Sell-Axe)
+prices:
+  COBBLESTONE: 0.5
+  STONE: 0.6
+  DEEPSLATE: 0.6
+  COBBLED_DEEPSLATE: 0.5
+  DIRT: 0.2
+  SAND: 0.3
+  GRAVEL: 0.3
+  OAK_LOG: 2.0
+  SPRUCE_LOG: 2.0
+  BIRCH_LOG: 2.0
+  JUNGLE_LOG: 2.0
+  ACACIA_LOG: 2.0
+  DARK_OAK_LOG: 2.0
+  CHERRY_LOG: 2.0
+  COAL: 3.0
+  RAW_IRON: 4.0
+  IRON_INGOT: 6.0
+  RAW_COPPER: 2.0
+  COPPER_INGOT: 3.0
+  RAW_GOLD: 8.0
+  GOLD_INGOT: 12.0
+  REDSTONE: 2.0
+  LAPIS_LAZULI: 3.0
+  QUARTZ: 4.0
+  DIAMOND: 50.0
+  EMERALD: 40.0
+  NETHERITE_SCRAP: 150.0
+  NETHERITE_INGOT: 700.0
+  WHEAT: 1.5
+  CARROT: 1.0
+  POTATO: 1.0
+  SUGAR_CANE: 1.0
+  PUMPKIN: 2.0
+  MELON_SLICE: 0.5
+  ROTTEN_FLESH: 0.3
+  BONE: 1.0
+  STRING: 1.0
+  GUNPOWDER: 3.0
+  ENDER_PEARL: 10.0
+  BLAZE_ROD: 8.0
